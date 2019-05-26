@@ -1,0 +1,4 @@
+#ifndef __ESP_COMM__
+#define __ESP_COMM__
+int get_station();
+#endif

@@ -1,0 +1,3 @@
+// check robot position and status
+int current_station();
+

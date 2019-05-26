@@ -1,0 +1,105 @@
+#ifndef __DRIVER__
+#define __DRIVER__
+static int overall_speed = 128;
+// min 128, max 255;
+
+const int kp = 50;
+const int ki = 10;
+const int kd = 20;
+
+void set_speed(int speed) {
+   set_pwm1_duty(speed);
+   set_pwm2_duty(speed);
+   overall_speed = speed;
+}
+/*void dk_dc(signed int8 x)
+{
+   if (x == 1) {
+      set_pwm1_duty(90);
+      set_pwm2_duty(90);
+   }
+   if(x==0){
+   set_pwm1_duty(80);
+    set_pwm2_duty(80);}
+   if(x==-1){ 
+   set_pwm1_duty(15);
+   set_pwm2_duty(40);}
+   if(x==2){
+   set_pwm1_duty(155);
+   set_pwm2_duty(0);}
+   if(x==-2){
+   set_pwm1_duty(0);
+   set_pwm2_duty(120);}
+}*/
+
+void forward() {
+   output_b(0x0a);
+}
+
+void back() {
+   output_high(PIN_B0);
+   output_low(PIN_B1);
+   output_high(PIN_B2);
+   output_low(PIN_B3);
+}
+void stop(){
+   output_low(PIN_B0);
+   output_low(PIN_B1);
+   output_low(PIN_B2);
+   output_low(PIN_B3);
+}
+void turn (signed int vec) {
+   if (vec == 0) {
+      set_pwm1_duty(overall_speed);
+      set_pwm2_duty(overall_speed);
+   }
+   #ifdef HIGH_SPEED
+   if (abs(vec) > overall_speed) {
+      vec = vec/abs(vec) * overall_speed;
+   }
+   if (vec > 0) {
+      set_pwm1_duty(overall_speed);
+      set_pwm2_duty(overall_speed - vec);
+   }
+   else {
+      set_pwm1_duty(overall_speed + vec);
+      set_pwm2_duty(overall_speed);
+   }
+   #endif
+   
+   #ifdef LOW_SPEED
+   if (vec > 0) {
+      long pwm1 = overall_speed + vec;
+      int pwm2 = overall_speed;
+      if (pwm1 > 255) {
+         pwm2 -= pwm1 % 255;
+         pwm1 = 255;
+      }
+      set_pwm1_duty(pwm1);
+      set_pwm2_duty(pwm2);
+   }
+   if (vec < 0) {
+      int pwm1 = overall_speed;
+      long pwm2 = overall_speed - vec;
+      if (pwm2 > 255) {
+         pwm1 -= pwm2 % 255;
+         pwm2 = 255;
+      }
+      set_pwm1_duty(pwm1);
+      set_pwm2_duty(pwm2);
+   }
+   #endif
+   
+}
+
+void pid_control() {
+   static signed long sum;
+   static signed int old_x;
+   signed int x = distance();
+   signed int error = x - old_x;
+   sum += error;
+   signed int turn_angle = kp*x + ki*sum + kd*error;
+   turn(turn_angle);
+   old_x = x;
+}
+#endif

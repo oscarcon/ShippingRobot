@@ -1,0 +1,3 @@
+// header define function to avoid obstacle on the line
+void avoid_obstacle();
+

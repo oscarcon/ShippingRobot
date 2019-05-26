@@ -1,0 +1,5 @@
+// check robot position and status
+#ifndef __ROBOT_STATE__
+#define __ROBOT_STATE__
+int current_station();
+#endif

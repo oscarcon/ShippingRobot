@@ -1,0 +1,100 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     line_sensor
+021     destination
+022     station
+023     distance.last_value
+024     overall_speed
+025-026 pid_control.sum
+027     pid_control.old_x
+028     @TRIS_C
+029     set_speed.speed
+029     pid_control.x
+029     read_line_sensor.@SCRATCH1
+029     get_destination.@SCRATCH1
+02A     pid_control.error
+02B     pid_control.turn_angle
+02C     turn.vec
+02C     pid_control.@SCRATCH1
+02D-02E @MULS1616.P1
+02D     turn.@SCRATCH1
+02D     pid_control.@SCRATCH2
+02E     @DIVS88.P1
+02E     @MUL88.P2
+02F     @DIVS88.P1
+02F-030 @MULS1616.P2
+02F     @MUL88.P3
+030     @DIVS88.@SCRATCH1
+031     @DIVS88.@SCRATCH2
+031     @MULS1616.@SCRATCH1
+032     @MULS1616.@SCRATCH2
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  init
+000026  set_speed
+00002F  forward
+000042  get_destination
+00004F  read_line_sensor
+00005A  @MUL88
+00007F  pid_control
+00007F  distance
+0000D3  @MULS1616
+00011C  turn
+000139  @DIVS88
+00017C  @cinit1
+00017C  MAIN
+000196  @cinit2
+
+Project Directory:
+    C:\Users\quang\OneDrive\Desktop\CSS PIC C\shippingrobot_v0.2\shippingrobot\
+
+Project Files:
+    main.c                                                  [26-May-19 22:02  CRC=4E76B260]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [12-Nov-13 14:35  CRC=81334808]
+    global.h                                                [26-May-19 16:36  CRC=00000000]
+    sensor.h                                                [26-May-19 17:20  CRC=9548293B]
+    driver.h                                                [26-May-19 20:25  CRC=A5B2C876]
+    obstacle.h                                              [25-May-19 16:14  CRC=B96F2DBD]
+    robot_state.h                                           [26-May-19 16:36  CRC=C451E437]
+    esp_comm.h                                              [26-May-19 22:02  CRC=D872A938]
+
+Source signature=394B507D
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
