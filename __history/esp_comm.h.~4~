@@ -1,6 +1,0 @@
-#ifndef __ESP_COMM__
-#define __ESP_COMM__
-int get_destination() {
-   return 0;
-}
-#endif

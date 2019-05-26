@@ -5,12 +5,12 @@
 
 //#define LOW_SPEED
 #define HIGH_SPEED
-#include "global.h"
-#include "sensor.h"
-#include "driver.h"
-#include "obstacle.h"
-#include "robot_state.h"
-#include "esp_comm.h"
+#include "lib/global.h"
+#include "lib/sensor.h"
+#include "lib/driver.h"
+#include "lib/obstacle.h"
+#include "lib/robot_state.h"
+#include "lib/esp_comm.h"
 
 int line_sensor = 0;
 int destination = 0;
@@ -26,22 +26,18 @@ void init() {
 
 int main() {
    init();
+   
+   while (input(PIN_B0)) {
+   }
+   
    set_speed(255);
    forward();
-   
-   while (!input(PIN_B0)) {
-   }
    
    while (True) {
       // wait for signal
       
       destination = get_destination();
       while ( !destination ) {
-         char str[10];
-         int x = input(PIN_B0);
-         sprintf(str, "%d", x);
-         puts(str);
-         delay_ms(1000);
       }
       line_sensor = read_line_sensor();
       /*signed int x = distance();
