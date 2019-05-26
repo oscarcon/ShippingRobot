@@ -1,7 +1,7 @@
 #ifndef __ESP_COMM__
 #define __ESP_COMM__
 
-int get_esp_data_loop(char *str) {
+void get_esp_data_loop(char *str) {
    if (kbhit()) {
       char c;
       int i = 0;
@@ -9,9 +9,7 @@ int get_esp_data_loop(char *str) {
          str[i] = c;
          i++;
       }
-      return 1;
    }
-   return 0;
 }
 signed int get_speed(char *str) {
    if (str[0] != '1') {
@@ -19,7 +17,7 @@ signed int get_speed(char *str) {
    }
    return str[1];
 }
-signed int get_destination(char *str) {
+int get_destination(char *str) {
    if (str[0] != '0') {
       return -1;
    }

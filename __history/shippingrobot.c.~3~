@@ -35,19 +35,11 @@ int main() {
    
    while (True) {
       // wait for signal
-      static int start_flag = 0;
-      char str[3];
-      int speed;
-      while (get_esp_data_loop(str) && !start_flag) {
-         start_flag = 1;
-      }
-      if ((speed = get_speed(str)) > 0) {
-         set_speed(speed);
-      }
-      if ((destination = get_destination(str)) > 0) {
+      
+      destination = get_destination();
+      while ( !destination ) {
       }
       line_sensor = read_line_sensor();
-      
       /*signed int x = distance();
      */
       // control the robot follow the line

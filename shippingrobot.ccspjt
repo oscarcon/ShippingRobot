@@ -14,7 +14,8 @@ Type=4
 1=shippingrobot.c
 [Opened Files]
 1=shippingrobot.c
-2=
+2=lib\esp_comm.h
+3=
 [shippingrobot.c]
 Type=4
 [Units]

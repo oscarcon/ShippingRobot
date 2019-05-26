@@ -1,0 +1,113 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     line_sensor
+021     destination
+022     station
+023     distance.last_value
+024     overall_speed
+025-026 pid_control.sum
+027     pid_control.old_x
+028     @TRIS_C
+029     MAIN.start_flag
+02A-02C MAIN.str
+02D     MAIN.speed
+02E-02F get_esp_data_loop.str
+02E-02F get_speed.str
+02E-02F get_destination.str
+02E     set_speed.speed
+02E     pid_control.x
+02E     read_line_sensor.@SCRATCH1
+02F     pid_control.error
+030     get_esp_data_loop.c
+030     pid_control.turn_angle
+030     get_speed.@SCRATCH1
+030     get_destination.@SCRATCH1
+031     turn.vec
+031     get_esp_data_loop.i
+031     pid_control.@SCRATCH1
+032-033 @MULS1616.P1
+032     turn.@SCRATCH1
+032     pid_control.@SCRATCH2
+032     get_esp_data_loop.@SCRATCH1
+033     @DIVS88.P1
+033     @MUL88.P2
+033     get_esp_data_loop.@SCRATCH2
+034     @MUL88.P1
+034     @DIVS88.P2
+034-035 @MULS1616.P3
+035     @DIVS88.@SCRATCH1
+036     @DIVS88.@SCRATCH2
+036     @MULS1616.@SCRATCH1
+037     @MULS1616.@SCRATCH2
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  init
+000026  set_speed
+00002D  forward
+000040  get_esp_data_loop
+00005C  get_speed
+000073  get_destination
+00008A  read_line_sensor
+000095  @MUL88
+0000BA  distance
+0000BA  pid_control
+00010E  @MULS1616
+000157  turn
+000174  @DIVS88
+0001B7  @cinit1
+0001B7  MAIN
+0001D2  @cinit2
+
+Project Directory:
+    C:\Users\quang\OneDrive\Desktop\CSS PIC C\shippingrobot_v0.2\shippingrobot\
+
+Project Files:
+    shippingrobot.c                                         [27-May-19 05:23  CRC=1F9D9A7F]
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [12-Nov-13 14:35  CRC=81334808]
+    lib\global.h                                            [26-May-19 16:36  CRC=00000000]
+    lib\sensor.h                                            [26-May-19 17:20  CRC=9548293B]
+    lib\driver.h                                            [26-May-19 20:25  CRC=A5B2C876]
+    lib\obstacle.h                                          [25-May-19 16:14  CRC=B96F2DBD]
+    lib\robot_state.h                                       [26-May-19 16:36  CRC=C451E437]
+    lib\esp_comm.h                                          [27-May-19 05:17  CRC=60B1B051]
+
+Source signature=1AF046CE
+
+Units:
+    shippingrobot (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   shippingrobot.xsym
+    Errors:      shippingrobot.err
+    Ext Symbols: shippingrobot.esym
+    INHX8:       shippingrobot.hex
+    Symbols:     shippingrobot.sym
+    List:        shippingrobot.lst
+    Debug/COFF:  shippingrobot.cof
+    Project:     shippingrobot.ccspjt
+    Call Tree:   shippingrobot.tre
+    Statistics:  shippingrobot.STA

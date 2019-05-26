@@ -1,0 +1,883 @@
+CCS PCM C Compiler, Version 5.015, 5967               27-May-19 05:23
+
+               Filename:   C:\Users\quang\OneDrive\Desktop\CSS PIC C\shippingrobot_v0.2\shippingrobot\shippingrobot.lst
+
+               ROM used:   523 words (6%)
+                           Largest free fragment is 2048
+               RAM used:   15 (4%) at main() level
+                           29 (8%) worst case
+               Stack used: 2 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   1B7
+0003:  NOP
+.................... #include <16F877A.h> 
+.................... //////////// Standard Header file for the PIC16F877A device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F877A 
+*
+0095:  CLRF   77
+0096:  CLRF   78
+0097:  MOVF   33,W
+0098:  BCF    03.0
+0099:  BTFSC  34.0
+009A:  ADDWF  77,F
+009B:  RRF    77,F
+009C:  RRF    78,F
+009D:  BTFSC  34.1
+009E:  ADDWF  77,F
+009F:  RRF    77,F
+00A0:  RRF    78,F
+00A1:  BTFSC  34.2
+00A2:  ADDWF  77,F
+00A3:  RRF    77,F
+00A4:  RRF    78,F
+00A5:  BTFSC  34.3
+00A6:  ADDWF  77,F
+00A7:  RRF    77,F
+00A8:  RRF    78,F
+00A9:  BTFSC  34.4
+00AA:  ADDWF  77,F
+00AB:  RRF    77,F
+00AC:  RRF    78,F
+00AD:  BTFSC  34.5
+00AE:  ADDWF  77,F
+00AF:  RRF    77,F
+00B0:  RRF    78,F
+00B1:  BTFSC  34.6
+00B2:  ADDWF  77,F
+00B3:  RRF    77,F
+00B4:  RRF    78,F
+00B5:  BTFSC  34.7
+00B6:  ADDWF  77,F
+00B7:  RRF    77,F
+00B8:  RRF    78,F
+00B9:  RETURN
+*
+010E:  MOVF   33,W
+010F:  XORWF  35,W
+0110:  ANDLW  80
+0111:  MOVWF  37
+0112:  BTFSS  33.7
+0113:  GOTO   119
+0114:  COMF   32,F
+0115:  COMF   33,F
+0116:  INCF   32,F
+0117:  BTFSC  03.2
+0118:  INCF   33,F
+0119:  BTFSS  35.7
+011A:  GOTO   120
+011B:  COMF   34,F
+011C:  COMF   35,F
+011D:  INCF   34,F
+011E:  BTFSC  03.2
+011F:  INCF   35,F
+0120:  MOVLW  10
+0121:  MOVWF  36
+0122:  CLRF   77
+0123:  CLRF   7A
+0124:  RRF    33,F
+0125:  RRF    32,F
+0126:  BTFSS  03.0
+0127:  GOTO   12E
+0128:  MOVF   34,W
+0129:  ADDWF  77,F
+012A:  BTFSC  03.0
+012B:  INCF   7A,F
+012C:  MOVF   35,W
+012D:  ADDWF  7A,F
+012E:  RRF    7A,F
+012F:  RRF    77,F
+0130:  RRF    79,F
+0131:  RRF    78,F
+0132:  DECFSZ 36,F
+0133:  GOTO   124
+0134:  BTFSS  37.7
+0135:  GOTO   13B
+0136:  COMF   78,F
+0137:  COMF   79,F
+0138:  INCF   78,F
+0139:  BTFSC  03.2
+013A:  INCF   79,F
+*
+0174:  MOVF   33,W
+0175:  XORWF  34,W
+0176:  ANDLW  80
+0177:  MOVWF  36
+0178:  BTFSS  33.7
+0179:  GOTO   17C
+017A:  COMF   33,F
+017B:  INCF   33,F
+017C:  BTFSS  34.7
+017D:  GOTO   180
+017E:  COMF   34,F
+017F:  INCF   34,F
+0180:  MOVF   34,W
+0181:  CLRF   78
+0182:  SUBWF  33,W
+0183:  BTFSC  03.0
+0184:  GOTO   188
+0185:  MOVF   33,W
+0186:  MOVWF  77
+0187:  GOTO   194
+0188:  CLRF   77
+0189:  MOVLW  08
+018A:  MOVWF  35
+018B:  RLF    33,F
+018C:  RLF    77,F
+018D:  MOVF   34,W
+018E:  SUBWF  77,W
+018F:  BTFSC  03.0
+0190:  MOVWF  77
+0191:  RLF    78,F
+0192:  DECFSZ 35,F
+0193:  GOTO   18B
+0194:  BTFSS  36.7
+0195:  GOTO   198
+0196:  COMF   78,F
+0197:  INCF   78,F
+....................  
+.................... #list 
+....................  
+.................... #fuses NOWDT, PUT, HS, NOPROTECT, NOLVP 
+.................... #use delay(clock=20M) 
+.................... #use rs232(baud=9600,xmit=pin_c6,rcv=pin_c7) 
+....................  
+.................... //#define LOW_SPEED 
+.................... #define HIGH_SPEED 
+.................... #include "lib/global.h" 
+.................... extern int line_sensor; 
+.................... extern int destination; 
+.................... extern int station; 
+....................  
+.................... #include "lib/sensor.h" 
+.................... #ifndef __SENSOR__ 
+.................... #define __SENSOR__ 
+.................... #include "global.h" 
+.................... extern int line_sensor; 
+.................... extern int destination; 
+.................... extern int station; 
+....................  
+.................... /*#include "driver.h" 
+.................... // d5 d6 d7 lll s1 s2 s3 
+.................... void dk_line() 
+.................... { 
+....................    if(input(pin_d5)==0 && input(pin_d6)==0 && input(pin_d7)==0){ 
+....................          dk_dc(0); 
+....................       } 
+....................    if(input(pin_d5)==1 && input(pin_d6)==0 && input(pin_d7)==1){ 
+....................          dk_dc(0); 
+....................       } 
+....................    if(input(pin_d5)==0 && input(pin_d6)==0 && input(pin_d7)==1){ 
+....................         dk_dc(-2); 
+....................    } 
+....................    if(input(pin_d5)==1 && input(pin_d6)==0 && input(pin_d7)==0){ 
+....................          dk_dc(2); 
+....................    } 
+....................    if(input(pin_d5)==0 && input(pin_d6)==1 && input(pin_d7)==1){ 
+....................         dk_dc(-2); 
+....................    } 
+....................    if(input(pin_d5)==1 && input(pin_d6)==1 && input(pin_d7)==0){ 
+....................          dk_dc(2); 
+....................    } 
+.................... }*/ 
+.................... int read_line_sensor() { 
+....................    return (~input_a())&0x1f; 
+*
+008A:  MOVLW  FF
+008B:  BSF    03.5
+008C:  MOVWF  05
+008D:  BCF    03.5
+008E:  MOVF   05,W
+008F:  XORLW  FF
+0090:  ANDLW  1F
+0091:  MOVWF  78
+0092:  BCF    0A.3
+0093:  BCF    0A.4
+0094:  GOTO   204 (RETURN)
+.................... } 
+.................... signed int distance() { 
+....................    static signed int last_value = 0; 
+....................    if (line_sensor == 0b00000100) { 
+*
+00BA:  MOVF   20,W
+00BB:  SUBLW  04
+00BC:  BTFSS  03.2
+00BD:  GOTO   0C1
+....................       return 0; 
+00BE:  MOVLW  00
+00BF:  MOVWF  78
+00C0:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00010000) { 
+00C1:  MOVF   20,W
+00C2:  SUBLW  10
+00C3:  BTFSS  03.2
+00C4:  GOTO   0C8
+....................       return -3; 
+00C5:  MOVLW  FD
+00C6:  MOVWF  78
+00C7:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00001100) { 
+00C8:  MOVF   20,W
+00C9:  SUBLW  0C
+00CA:  BTFSS  03.2
+00CB:  GOTO   0CF
+....................       return -2; 
+00CC:  MOVLW  FE
+00CD:  MOVWF  78
+00CE:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00001000) { 
+00CF:  MOVF   20,W
+00D0:  SUBLW  08
+00D1:  BTFSS  03.2
+00D2:  GOTO   0D6
+....................       return -1; 
+00D3:  MOVLW  FF
+00D4:  MOVWF  78
+00D5:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00000010) { 
+00D6:  MOVF   20,W
+00D7:  SUBLW  02
+00D8:  BTFSS  03.2
+00D9:  GOTO   0DD
+....................       return 1; 
+00DA:  MOVLW  01
+00DB:  MOVWF  78
+00DC:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00000110) { 
+00DD:  MOVF   20,W
+00DE:  SUBLW  06
+00DF:  BTFSS  03.2
+00E0:  GOTO   0E4
+....................       return 2; 
+00E1:  MOVLW  02
+00E2:  MOVWF  78
+00E3:  GOTO   0EF
+....................    } 
+....................    if (line_sensor == 0b00000001) { 
+00E4:  DECFSZ 20,W
+00E5:  GOTO   0EA
+....................       return 3; 
+00E6:  MOVLW  03
+00E7:  MOVWF  78
+00E8:  GOTO   0EF
+....................    } 
+00E9:  GOTO   0ED
+....................    else { 
+....................       return last_value; 
+00EA:  MOVF   23,W
+00EB:  MOVWF  78
+00EC:  GOTO   0EF
+....................    } 
+....................    last_value = line_sensor; 
+00ED:  MOVF   20,W
+00EE:  MOVWF  23
+.................... } 
+.................... #endif 
+....................  
+.................... #include "lib/driver.h" 
+.................... #ifndef __DRIVER__ 
+.................... #define __DRIVER__ 
+.................... static int overall_speed = 128; 
+.................... // min 128, max 255; 
+....................  
+.................... const int kp = 50; 
+.................... const int ki = 10; 
+.................... const int kd = 20; 
+....................  
+.................... void set_speed(int speed) { 
+....................    set_pwm1_duty(speed); 
+*
+0026:  MOVF   2E,W
+0027:  MOVWF  15
+....................    set_pwm2_duty(speed); 
+0028:  MOVF   2E,W
+0029:  MOVWF  1B
+....................    overall_speed = speed; 
+002A:  MOVF   2E,W
+002B:  MOVWF  24
+002C:  RETURN
+.................... } 
+.................... /*void dk_dc(signed int8 x) 
+.................... { 
+....................    if (x == 1) { 
+....................       set_pwm1_duty(90); 
+....................       set_pwm2_duty(90); 
+....................    } 
+....................    if(x==0){ 
+....................    set_pwm1_duty(80); 
+....................     set_pwm2_duty(80);} 
+....................    if(x==-1){  
+....................    set_pwm1_duty(15); 
+....................    set_pwm2_duty(40);} 
+....................    if(x==2){ 
+....................    set_pwm1_duty(155); 
+....................    set_pwm2_duty(0);} 
+....................    if(x==-2){ 
+....................    set_pwm1_duty(0); 
+....................    set_pwm2_duty(120);} 
+.................... }*/ 
+....................  
+.................... void forward() { 
+....................    output_high(PIN_B1); 
+002D:  BSF    03.5
+002E:  BCF    06.1
+002F:  BCF    03.5
+0030:  BSF    06.1
+....................    output_low(PIN_B2); 
+0031:  BSF    03.5
+0032:  BCF    06.2
+0033:  BCF    03.5
+0034:  BCF    06.2
+....................    output_high(PIN_B3); 
+0035:  BSF    03.5
+0036:  BCF    06.3
+0037:  BCF    03.5
+0038:  BSF    06.3
+....................    output_low(PIN_B4); 
+0039:  BSF    03.5
+003A:  BCF    06.4
+003B:  BCF    03.5
+003C:  BCF    06.4
+003D:  BCF    0A.3
+003E:  BCF    0A.4
+003F:  GOTO   1E1 (RETURN)
+.................... } 
+....................  
+.................... void back() { 
+....................    output_low(PIN_B1); 
+....................    output_high(PIN_B2); 
+....................    output_low(PIN_B3); 
+....................    output_high(PIN_B4); 
+.................... } 
+.................... void stop(){ 
+....................    output_low(PIN_B1); 
+....................    output_low(PIN_B2); 
+....................    output_low(PIN_B3); 
+....................    output_low(PIN_B4); 
+.................... } 
+.................... void turn (signed int vec) { 
+....................    if (vec == 0) { 
+*
+0157:  MOVF   31,F
+0158:  BTFSS  03.2
+0159:  GOTO   15E
+....................       set_pwm1_duty(overall_speed); 
+015A:  MOVF   24,W
+015B:  MOVWF  15
+....................       set_pwm2_duty(overall_speed); 
+015C:  MOVF   24,W
+015D:  MOVWF  1B
+....................    } 
+....................    #ifdef HIGH_SPEED 
+....................    if (abs(vec) > overall_speed) { 
+015E:  MOVF   31,W
+015F:  BTFSS  31.7
+0160:  GOTO   163
+0161:  MOVF   31,W
+0162:  SUBLW  00
+0163:  MOVWF  77
+0164:  BTFSC  77.7
+0165:  GOTO   19F
+0166:  MOVF   77,W
+0167:  SUBWF  24,W
+0168:  BTFSC  03.0
+0169:  GOTO   19F
+....................       vec = vec/abs(vec) * overall_speed; 
+016A:  MOVF   31,W
+016B:  BTFSS  31.7
+016C:  GOTO   16F
+016D:  MOVF   31,W
+016E:  SUBLW  00
+016F:  MOVWF  32
+0170:  MOVF   31,W
+0171:  MOVWF  33
+0172:  MOVF   32,W
+0173:  MOVWF  34
+*
+0198:  MOVF   78,W
+0199:  MOVWF  33
+019A:  MOVF   24,W
+019B:  MOVWF  34
+019C:  CALL   095
+019D:  MOVF   78,W
+019E:  MOVWF  31
+....................    } 
+....................    if (vec > 0) { 
+019F:  BTFSC  31.7
+01A0:  GOTO   1AC
+01A1:  MOVF   31,W
+01A2:  SUBLW  00
+01A3:  BTFSC  03.0
+01A4:  GOTO   1AC
+....................       set_pwm1_duty(overall_speed); 
+01A5:  MOVF   24,W
+01A6:  MOVWF  15
+....................       set_pwm2_duty(overall_speed - vec); 
+01A7:  MOVF   31,W
+01A8:  SUBWF  24,W
+01A9:  MOVWF  32
+01AA:  MOVWF  1B
+....................    } 
+01AB:  GOTO   1B2
+....................    else { 
+....................       set_pwm1_duty(overall_speed + vec); 
+01AC:  MOVF   31,W
+01AD:  ADDWF  24,W
+01AE:  MOVWF  32
+01AF:  MOVWF  15
+....................       set_pwm2_duty(overall_speed); 
+01B0:  MOVF   24,W
+01B1:  MOVWF  1B
+....................    } 
+....................    #endif 
+....................     
+....................    #ifdef LOW_SPEED 
+....................    if (vec > 0) { 
+....................       long pwm1 = overall_speed + vec; 
+....................       int pwm2 = overall_speed; 
+....................       if (pwm1 > 255) { 
+....................          pwm2 -= pwm1 % 255; 
+....................          pwm1 = 255; 
+....................       } 
+....................       set_pwm1_duty(pwm1); 
+....................       set_pwm2_duty(pwm2); 
+....................    } 
+....................    if (vec < 0) { 
+....................       int pwm1 = overall_speed; 
+....................       long pwm2 = overall_speed - vec; 
+....................       if (pwm2 > 255) { 
+....................          pwm1 -= pwm2 % 255; 
+....................          pwm2 = 255; 
+....................       } 
+....................       set_pwm1_duty(pwm1); 
+....................       set_pwm2_duty(pwm2); 
+....................    } 
+....................    #endif 
+....................     
+.................... } 
+....................  
+.................... void pid_control() { 
+*
+00EF:  MOVF   78,W
+00F0:  MOVWF  2E
+00F1:  MOVF   27,W
+00F2:  SUBWF  2E,W
+00F3:  MOVWF  2F
+....................    static signed long sum; 
+*
+01D3:  BCF    03.5
+01D4:  CLRF   25
+01D5:  CLRF   26
+....................    static signed int old_x; 
+01D6:  CLRF   27
+....................    signed int x = distance(); 
+....................    signed int error = x - old_x; 
+....................    sum += error; 
+*
+00F4:  CLRF   7A
+00F5:  MOVF   2F,W
+00F6:  BTFSC  2F.7
+00F7:  DECF   7A,F
+00F8:  ADDWF  25,F
+00F9:  MOVF   7A,W
+00FA:  BTFSC  03.0
+00FB:  INCFSZ 7A,W
+00FC:  ADDWF  26,F
+....................    signed int turn_angle = kp*x + ki*sum + kd*error; 
+00FD:  MOVLW  32
+00FE:  MOVWF  33
+00FF:  MOVF   2E,W
+0100:  MOVWF  34
+0101:  CALL   095
+0102:  CLRF   32
+0103:  MOVF   78,W
+0104:  MOVWF  31
+0105:  BTFSC  31.7
+0106:  DECF   32,F
+0107:  CLRF   33
+0108:  MOVLW  0A
+0109:  MOVWF  32
+010A:  MOVF   26,W
+010B:  MOVWF  35
+010C:  MOVF   25,W
+010D:  MOVWF  34
+*
+013B:  MOVF   79,W
+013C:  MOVWF  7A
+013D:  MOVF   78,W
+013E:  ADDWF  31,F
+013F:  MOVF   79,W
+0140:  BTFSC  03.0
+0141:  INCFSZ 79,W
+0142:  ADDWF  32,F
+0143:  MOVLW  14
+0144:  MOVWF  33
+0145:  MOVF   2F,W
+0146:  MOVWF  34
+0147:  CALL   095
+0148:  MOVF   78,W
+0149:  CLRF   7A
+014A:  MOVWF  77
+014B:  BTFSC  77.7
+014C:  DECF   7A,F
+014D:  ADDWF  31,W
+014E:  MOVWF  78
+014F:  MOVF   32,W
+0150:  BTFSC  03.0
+0151:  INCFSZ 32,W
+0152:  ADDWF  7A,F
+0153:  MOVF   78,W
+0154:  MOVWF  30
+....................    turn(turn_angle); 
+0155:  MOVF   30,W
+0156:  MOVWF  31
+....................    old_x = x; 
+*
+01B2:  MOVF   2E,W
+01B3:  MOVWF  27
+01B4:  BCF    0A.3
+01B5:  BCF    0A.4
+01B6:  GOTO   207 (RETURN)
+.................... } 
+.................... #endif 
+....................  
+.................... #include "lib/obstacle.h" 
+.................... // header define function to avoid obstacle on the line 
+.................... #ifndef __OBSTACLE__ 
+.................... #define __OBSTACLE__ 
+.................... void avoid_obstacle() { 
+.................... } 
+.................... #endif 
+....................  
+....................  
+.................... #include "lib/robot_state.h" 
+.................... // check robot position and status 
+.................... #include "global.h" 
+.................... extern int line_sensor; 
+.................... extern int destination; 
+.................... extern int station; 
+....................  
+.................... #ifndef __ROBOT_STATE__ 
+.................... #define __ROBOT_STATE__ 
+....................  
+.................... int is_at_station() { 
+....................    if (line_sensor == 0b00011011) { 
+....................       return 1; 
+....................    } 
+....................    else { 
+....................       return 0; 
+....................    } 
+.................... } 
+.................... int current_station() { 
+....................     
+....................    return 0; 
+.................... } 
+.................... void stop_at_destination() { 
+....................  
+.................... } 
+....................  
+.................... void return_to_start() { 
+.................... } 
+....................  
+....................  
+.................... #endif 
+....................  
+.................... #include "lib/esp_comm.h" 
+.................... #ifndef __ESP_COMM__ 
+.................... #define __ESP_COMM__ 
+....................  
+.................... int get_esp_data_loop(char *str) { 
+....................    if (kbhit()) { 
+*
+0040:  BTFSS  0C.5
+0041:  GOTO   057
+....................       char c; 
+....................       int i = 0; 
+0042:  CLRF   31
+....................       while ((c = getc()) != '\n') { 
+0043:  BTFSS  0C.5
+0044:  GOTO   043
+0045:  MOVF   1A,W
+0046:  MOVWF  30
+0047:  SUBLW  0A
+0048:  BTFSC  03.2
+0049:  GOTO   054
+....................          str[i] = c; 
+004A:  MOVF   31,W
+004B:  ADDWF  2E,W
+004C:  MOVWF  04
+004D:  BCF    03.7
+004E:  BTFSC  2F.0
+004F:  BSF    03.7
+0050:  MOVF   30,W
+0051:  MOVWF  00
+....................          i++; 
+0052:  INCF   31,F
+0053:  GOTO   043
+....................       } 
+....................       return 1; 
+0054:  MOVLW  01
+0055:  MOVWF  78
+0056:  GOTO   059
+....................    } 
+....................    return 0; 
+0057:  MOVLW  00
+0058:  MOVWF  78
+0059:  BCF    0A.3
+005A:  BCF    0A.4
+005B:  GOTO   1E5 (RETURN)
+.................... } 
+.................... signed int get_speed(char *str) { 
+....................    if (str[0] != '1') { 
+005C:  MOVF   2E,W
+005D:  MOVWF  04
+005E:  BCF    03.7
+005F:  BTFSC  2F.0
+0060:  BSF    03.7
+0061:  MOVF   00,W
+0062:  SUBLW  31
+0063:  BTFSC  03.2
+0064:  GOTO   068
+....................       return -1; 
+0065:  MOVLW  FF
+0066:  MOVWF  78
+0067:  GOTO   070
+....................    } 
+....................    return str[1]; 
+0068:  MOVLW  01
+0069:  ADDWF  2E,W
+006A:  MOVWF  04
+006B:  BCF    03.7
+006C:  BTFSC  2F.0
+006D:  BSF    03.7
+006E:  MOVF   00,W
+006F:  MOVWF  78
+0070:  BCF    0A.3
+0071:  BCF    0A.4
+0072:  GOTO   1F2 (RETURN)
+.................... } 
+.................... signed int get_destination(char *str) { 
+....................    if (str[0] != '0') { 
+0073:  MOVF   2E,W
+0074:  MOVWF  04
+0075:  BCF    03.7
+0076:  BTFSC  2F.0
+0077:  BSF    03.7
+0078:  MOVF   00,W
+0079:  SUBLW  30
+007A:  BTFSC  03.2
+007B:  GOTO   07F
+....................       return -1; 
+007C:  MOVLW  FF
+007D:  MOVWF  78
+007E:  GOTO   087
+....................    } 
+....................    return str[1]; 
+007F:  MOVLW  01
+0080:  ADDWF  2E,W
+0081:  MOVWF  04
+0082:  BCF    03.7
+0083:  BTFSC  2F.0
+0084:  BSF    03.7
+0085:  MOVF   00,W
+0086:  MOVWF  78
+0087:  BCF    0A.3
+0088:  BCF    0A.4
+0089:  GOTO   1FE (RETURN)
+.................... } 
+.................... #endif 
+....................  
+....................  
+.................... int line_sensor = 0; 
+.................... int destination = 0; 
+.................... int station = 0; 
+.................... void init() { 
+....................    set_tris_b(0x01); 
+*
+0004:  MOVLW  01
+0005:  BSF    03.5
+0006:  MOVWF  06
+....................    port_b_pullups(1); 
+0007:  BCF    01.7
+....................    set_tris_a(0xff); 
+0008:  MOVLW  FF
+0009:  MOVWF  05
+....................    setup_ccp1(CCP_PWM); 
+000A:  BCF    03.5
+000B:  BCF    28.2
+000C:  MOVF   28,W
+000D:  BSF    03.5
+000E:  MOVWF  07
+000F:  BCF    03.5
+0010:  BCF    07.2
+0011:  MOVLW  0C
+0012:  MOVWF  17
+....................    setup_ccp2(CCP_PWM); 
+0013:  BCF    28.1
+0014:  MOVF   28,W
+0015:  BSF    03.5
+0016:  MOVWF  07
+0017:  BCF    03.5
+0018:  BCF    07.1
+0019:  MOVLW  0C
+001A:  MOVWF  1D
+....................    setup_timer_2(T2_DIV_BY_16, 255, 1); 
+001B:  MOVLW  00
+001C:  MOVWF  78
+001D:  IORLW  06
+001E:  MOVWF  12
+001F:  MOVLW  FF
+0020:  BSF    03.5
+0021:  MOVWF  12
+0022:  BCF    03.5
+0023:  BCF    0A.3
+0024:  BCF    0A.4
+0025:  GOTO   1D8 (RETURN)
+.................... } 
+....................  
+.................... int main() { 
+*
+01B7:  MOVF   03,W
+01B8:  ANDLW  1F
+01B9:  MOVWF  03
+01BA:  MOVLW  81
+01BB:  BSF    03.5
+01BC:  MOVWF  19
+01BD:  MOVLW  A6
+01BE:  MOVWF  18
+01BF:  MOVLW  90
+01C0:  BCF    03.5
+01C1:  MOVWF  18
+01C2:  CLRF   23
+01C3:  MOVLW  80
+01C4:  MOVWF  24
+01C5:  CLRF   20
+01C6:  CLRF   21
+01C7:  CLRF   22
+01C8:  MOVLW  FF
+01C9:  MOVWF  28
+01CA:  CLRF   29
+01CB:  BSF    03.5
+01CC:  BSF    1F.0
+01CD:  BSF    1F.1
+01CE:  BSF    1F.2
+01CF:  BCF    1F.3
+01D0:  MOVLW  07
+01D1:  MOVWF  1C
+01D2:  BCF    03.7
+....................    init(); 
+*
+01D7:  GOTO   004
+....................     
+....................    while (input(PIN_B0)) { 
+01D8:  BSF    03.5
+01D9:  BSF    06.0
+01DA:  BCF    03.5
+01DB:  BTFSC  06.0
+01DC:  GOTO   1D8
+....................    } 
+....................     
+....................    set_speed(255); 
+01DD:  MOVLW  FF
+01DE:  MOVWF  2E
+01DF:  CALL   026
+....................    forward(); 
+01E0:  GOTO   02D
+....................     
+....................    while (True) { 
+....................       // wait for signal 
+....................       static int start_flag = 0; 
+....................       char str[3]; 
+....................       int speed; 
+....................       while (get_esp_data_loop(str) && !start_flag) { 
+01E1:  CLRF   2F
+01E2:  MOVLW  2A
+01E3:  MOVWF  2E
+01E4:  GOTO   040
+01E5:  MOVF   78,F
+01E6:  BTFSC  03.2
+01E7:  GOTO   1EE
+01E8:  MOVF   29,F
+01E9:  BTFSS  03.2
+01EA:  GOTO   1EE
+....................          start_flag = 1; 
+01EB:  MOVLW  01
+01EC:  MOVWF  29
+01ED:  GOTO   1E1
+....................       } 
+....................       if ((speed = get_speed(str)) > 0) { 
+01EE:  CLRF   2F
+01EF:  MOVLW  2A
+01F0:  MOVWF  2E
+01F1:  GOTO   05C
+01F2:  MOVF   78,W
+01F3:  MOVWF  2D
+01F4:  MOVF   2D,F
+01F5:  BTFSC  03.2
+01F6:  GOTO   1FA
+....................          set_speed(speed); 
+01F7:  MOVF   2D,W
+01F8:  MOVWF  2E
+01F9:  CALL   026
+....................       } 
+....................       if ((destination = get_destination(str)) > 0) { 
+01FA:  CLRF   2F
+01FB:  MOVLW  2A
+01FC:  MOVWF  2E
+01FD:  GOTO   073
+01FE:  MOVF   78,W
+01FF:  MOVWF  21
+0200:  MOVF   21,F
+0201:  BTFSC  03.2
+0202:  GOTO   203
+....................       } 
+....................       line_sensor = read_line_sensor(); 
+0203:  GOTO   08A
+0204:  MOVF   78,W
+0205:  MOVWF  20
+....................        
+....................       /*signed int x = distance(); 
+....................      */ 
+....................       // control the robot follow the line 
+....................       pid_control(); 
+0206:  GOTO   0BA
+0207:  GOTO   1E1
+....................        
+....................       //avoid_obstacle(); 
+....................  
+....................      // stop_at_destination(); 
+....................        
+....................      // return_to_start(); 
+....................        
+....................      // stop(); 
+....................        
+....................       // destination = 0;  */ 
+....................    } 
+....................    return 0; 
+0208:  MOVLW  00
+0209:  MOVWF  78
+.................... } 
+....................  
+020A:  SLEEP
+....................  
+....................  
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT BROWNOUT NOLVP NOCPD NOWRT NODEBUG NOPROTECT

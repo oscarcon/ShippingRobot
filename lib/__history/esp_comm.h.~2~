@@ -1,0 +1,11 @@
+#ifndef __ESP_COMM__
+#define __ESP_COMM__
+int get_destination() {
+   if (kbhit()) {
+      while (getc() != '\n') {
+      
+      }
+   }
+   return -1;
+}
+#endif
