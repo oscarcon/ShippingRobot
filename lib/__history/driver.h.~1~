@@ -94,6 +94,7 @@ void turn (signed int vec) {
    #endif
    
 }
+
 void pid_control() {
    static signed long sum;
    static signed int old_x;
@@ -103,8 +104,5 @@ void pid_control() {
    signed int turn_angle = kp*x + ki*sum + kd*error;
    turn(turn_angle);
    old_x = x;
-}
-
-void turn180() {
 }
 #endif

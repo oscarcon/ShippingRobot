@@ -39,5 +39,8 @@ int is_at_station() {
    }
    return 0;
 }
+void return_to_start() {
+}
+
 
 #endif

@@ -55,9 +55,4 @@ signed int distance() {
    }
    last_value = line_sensor;
 }
-
-int detect_obstacle() {
-   return 0;
-}
-
 #endif

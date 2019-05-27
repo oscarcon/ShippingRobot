@@ -25,10 +25,4 @@ signed int get_destination(char *str) {
    }
    return str[1];
 }
-signed int get_station(char *str) {
-   if (str[0] != '2') {
-      return -1;
-   }
-   return str[1];
-}
 #endif

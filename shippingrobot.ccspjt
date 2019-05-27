@@ -15,7 +15,11 @@ Type=4
 [Opened Files]
 1=shippingrobot.c
 2=lib\esp_comm.h
-3=
+3=lib\global.h
+4=lib\sensor.h
+5=lib\driver.h
+6=lib\robot_state.h
+7=
 [shippingrobot.c]
 Type=4
 [Units]

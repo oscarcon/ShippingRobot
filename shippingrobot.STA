@@ -1,63 +1,72 @@
 
-ROM used:   523/8192 (6%)
-            523/8192 (6%) including unused fragments
+ROM used:   671/8192 (8%)
+            671/8192 (8%) including unused fragments
 
-            0.5 Average locations per line
-            5.0 Average locations per statement
+            0.6 Average locations per line
+            4.4 Average locations per statement
 
-RAM used:   15/368 (4%) at main() level
-            29/368 (8%) worst case
+RAM used:   21/368 (6%) at main() level
+            36/368 (10%) worst case
 
-Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack used: 3 worst case (3 in main + 0 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   71    24  23  shippingrobot.c
+   95    50  33  shippingrobot.c
   671     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
-    4     0   0  lib\global.h
-   59    25  24  lib\sensor.h
-  109    33  32  lib\driver.h
+    6     0   0  lib\global.h
+   64    26  17  lib\sensor.h
+  111    33  22  lib\driver.h
     8     0   0  lib\obstacle.h
-   27     6   6  lib\robot_state.h
-   29    16  15  lib\esp_comm.h
+   44    24  16  lib\robot_state.h
+   35    20  13  lib\esp_comm.h
 ----- -----
-  978   104 Total
+ 1034   153 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     11   2    1    33  1.5  read_line_sensor
- Inline         0   450  4.1  distance
+0      9   1    1    33  1.5  read_line_sensor
+ Inline         0   447  4.2  distance
+0      5   1    0    14  0.7  detect_obstacle
 0      7   1    1    59  1.8  set_speed
-0     19   4    0    67  1.2  forward
+0     19   3    0    67  1.2  forward
+0     19   3    0    67  1.2  stop
  Inline         2   355  5.4  turn
  Inline         4             @DIVS88
-0     37   7    2             @MUL88
-0    253  48    4   280  4.9  pid_control
- Inline         6             @MULS1616
-0     28   5    4   209  5.2  get_esp_data_loop
-0     23   4    3    93  3.6  get_speed
-0     23   4    3    93  3.6  get_destination
-0     34   7    0   130  1.8  init
-0     84  16    0   478  5.3  MAIN
- Inline         0             @cinit1
+0     37   6    2   550  5.4  @MUL88
+0    251  37    4   277  5.1  pid_control
+ Inline         6   550  5.4  @MULS1616
+0      1   0    0     3  0.0  turn180
+ Inline         0    59  2.3  is_at_cross
+0     42   6    4   189  4.6  update_current_position
+0      9   1    0   550  5.4  @const668
+0     17   3    1    90  3.1  is_at_destination
+0     12   2    0    52  1.7  is_at_station
+0     28   4    4   209  5.2  get_esp_data_loop
+0     23   3    3    93  3.6  get_speed
+0     23   3    3    93  3.6  get_station
+0     34   5    0   130  1.8  init
+0     23   3    1   255  3.7  back_to_the_future
+0    108  16    0   789  5.9  MAIN
+ Inline         0   550  5.4  @cinit1
 
 Program metrics:
-    Functions               11
-    Statements              104
-    Comments                181
-    Volume (V)              3696
-    Difficulty (D)          39.5
-    Effort to implement (E) 145869
-    Time to implement (T)   2 hours, 15 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   15
-    Maintainability (MI)    104
+    Functions               23
+    Statements              153
+    Comments                175
+    Volume (V)              9795
+    Difficulty (D)          83.5
+    Effort to implement (E) 817594
+    Time to implement (T)   12 hours, 37 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   35
+    Maintainability (MI)    63
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF   519  1525  
+00004-007FF   667  1377  
 00800-00FFF     0  2048  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  

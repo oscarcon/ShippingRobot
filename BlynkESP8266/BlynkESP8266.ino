@@ -38,7 +38,7 @@
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
-char auth[] = "a0ffc5afa9794601bc73e05755f0f8f4";
+char auth[] = "45b4d15c920a42fdb7f19b02e3c8fc4a";
 
 // Your WiFi credentials.
 // Set password to "" for open networks.

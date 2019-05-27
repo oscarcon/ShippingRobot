@@ -31,12 +31,11 @@ void back_to_the_future() {
    turn180();
    int cross_count_to_the_start = 5 + destination - 1;
    current_position = 0;
-   forward();
    while (current_position != cross_count_to_the_start) {
+      forward();
       line_sensor = read_line_sensor();
       pid_control();
    }
-   stop();
    turn180();
    // reset everythings from the last run
    station = 0;

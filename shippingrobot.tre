@@ -1,5 +1,5 @@
 ÀÄshippingrobot_v0
-   ÀÄMAIN  0/84  Ram=0
+   ÀÄMAIN  0/108  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄinit  0/34  Ram=0
       ÃÄset_speed  0/7  Ram=1
@@ -7,13 +7,25 @@
       ÃÄget_esp_data_loop  0/28  Ram=4
       ÃÄget_speed  0/23  Ram=3
       ÃÄset_speed  0/7  Ram=1
-      ÃÄget_destination  0/23  Ram=3
-      ÃÄread_line_sensor  0/11  Ram=1
-      ÀÄpid_control  0/253  Ram=4
-         ÃÄdistance  (Inline)  Ram=0
-         ÃÄ@MUL88  0/37  Ram=2
-         ÃÄ@MULS1616  (Inline)  Ram=6
-         ÃÄ@MUL88  0/37  Ram=2
-         ÀÄturn  (Inline)  Ram=2
-            ÃÄ@DIVS88  (Inline)  Ram=4
-            ÀÄ@MUL88  0/37  Ram=2
+      ÃÄget_station  0/23  Ram=3
+      ÃÄread_line_sensor  0/9  Ram=1
+      ÃÄupdate_current_position  0/42  Ram=4
+      ³  ÀÄis_at_cross  (Inline)  Ram=0
+      ÃÄis_at_station  0/12  Ram=0
+      ÃÄpid_control  0/251  Ram=4
+      ³  ÃÄdistance  (Inline)  Ram=0
+      ³  ÃÄ@MUL88  0/37  Ram=2
+      ³  ÃÄ@MULS1616  (Inline)  Ram=6
+      ³  ÃÄ@MUL88  0/37  Ram=2
+      ³  ÀÄturn  (Inline)  Ram=2
+      ³     ÃÄ@DIVS88  (Inline)  Ram=4
+      ³     ÀÄ@MUL88  0/37  Ram=2
+      ÃÄdetect_obstacle  0/5  Ram=0
+      ÃÄstop  0/19  Ram=0
+      ÃÄis_at_destination  0/17  Ram=1
+      ÀÄback_to_the_future  0/23  Ram=1
+         ÃÄturn180  0/1  Ram=0
+         ÃÄread_line_sensor  0/9  Ram=1
+         ÃÄpid_control  0/251  Ram=4
+         ³  ÀÄ*
+         ÀÄturn180  0/1  Ram=0

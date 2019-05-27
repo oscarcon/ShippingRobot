@@ -1,5 +1,5 @@
 extern int line_sensor;
 extern int destination;
 extern int station;
-extern int current_position;
-extern int delivered_flag;
+extern int cur_station;
+extern int cur_destination;

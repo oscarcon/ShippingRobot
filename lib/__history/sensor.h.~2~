@@ -57,7 +57,7 @@ signed int distance() {
 }
 
 int detect_obstacle() {
-   return 0;
+   return 1;
 }
 
 #endif
